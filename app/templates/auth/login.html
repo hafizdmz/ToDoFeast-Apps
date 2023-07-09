@@ -1,0 +1,57 @@
+{% extends '/auth/base.html' %} {% block content %}
+<section class="container w-50 mt-5 p-4">
+  <h1 class="text-center mt-5 text-white">TodoFeast</h1>
+  <h3 class="text-center mb-3 text-white">Login Page</h3>
+  <div class="card p-2 mt-5 rounded-4 login-box">
+    <form action="#" class="login-form px-3" id="form-login">
+      <!-- bagian toast -->
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        class="bg-dark position-relative bd-example-toasts"
+      >
+        <div
+          class="toast-container p-3 top-0 start-50 translate-middle-x"
+          id="toastPlacement"
+        >
+          <div class="toast text-bg-danger" id="liveToast">
+            <div class="toast-body" id="toast-body"></div>
+          </div>
+        </div>
+      </div>
+      <!-- end bagian toast -->
+      <div class="form-floating my-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email-address"
+          placeholder="name@example.com"
+          required
+        />
+        <label for="email-address" class="text-black-50">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        <label for="password" class="text-black-50">Password</label>
+      </div>
+      <div class="d-grid gap-2 col-4 mx-auto">
+        <button
+          type="submit"
+          class="btn btn-light p-2 mt-4 mb-4 rounded-5"
+          id="btn-login"
+        >
+          <h5 class="m-0 p-2">Login</h5>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="{{url_for('static', filename="js/script-login.js")}}"></script>
+{% endblock %}
